@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
+    [HideInInspector] public int currentCheckpoint;
     [HideInInspector] public bool isCloseToButton;
     
     [SerializeField] private bool Player_1;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float turnSmoothTime = .1f;
     [SerializeField] private float jumpSpeed = 10;
     [SerializeField] private float gravity = 9.81f;
+    [SerializeField] private Checkpoints checkpoints;
     
     private CharacterController _controller;
     private float _turnSmoothVelocity;
@@ -21,7 +23,7 @@ public class Player : MonoBehaviour
     private bool _isParented;
     private Vector3 _moveDirection = Vector3.zero;
     private Transform _parentDiference;
-    private Vector3 lastPosition = Vector3.zero;
+    private Vector3 _lastPosition = Vector3.zero;
     
     public delegate void PressedAction();
     public event PressedAction OnPressed;
@@ -31,6 +33,14 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _controller = gameObject.GetComponent<CharacterController>();
+        if (Player_1)
+        {
+            transform.position = checkpoints.CurrentCheckpointBlue.transform.position;
+        }
+        else
+        {
+            transform.position = checkpoints.CurrentCheckpointRed.transform.position;
+        }
     }
 
     private void Update()
@@ -83,12 +93,44 @@ public class Player : MonoBehaviour
         Vector3 parentD = Vector3.zero;
         if (_isParented)
         {
-            if(lastPosition != Vector3.zero)
-                parentD = (_parentDiference.position - lastPosition)/Time.deltaTime;
-            lastPosition = _parentDiference.position;
+            if(_lastPosition != Vector3.zero)
+                parentD = (_parentDiference.position - _lastPosition)/Time.deltaTime;
+            _lastPosition = _parentDiference.position;
+        }
+        else
+        {
+            if (_parentDiference != null)
+            {
+                _parentDiference = null;
+                _lastPosition = Vector3.zero;
+            }
         }
         _controller.Move((_moveDirection + parentD) * Time.deltaTime);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Player_1)
+        {
+            if (other.GetComponent<Checkpoint>())
+            {
+                checkpoints.EnterNewCheckpointBlue(other.GetComponent<Checkpoint>());
+            }
+        }
+        else
+        {
+            if (other.GetComponent<Checkpoint>())
+            {
+                checkpoints.EnterNewCheckpointRed(other.GetComponent<Checkpoint>());
+            }
+        }
+
+        if (other.gameObject.tag == "DeathFloor")
+        {
+            Deth();
+        }
+    }
+
     void CheckGroundStatus(bool jump=false)
     {
         Ray ray = new Ray(transform.position, -transform.up);
@@ -131,6 +173,35 @@ public class Player : MonoBehaviour
             if(!_controller.isGrounded)
                 _moveDirection.y -= gravity * Time.deltaTime;
         }
+    }
+
+    public void Deth()
+    {
+        if (Player_1)
+        {
+            print(checkpoints.CurrentCheckpointBlue.transform.position);
+            StartCoroutine(waitForDeth(true));
+        }
+        else
+        {
+            transform.position = checkpoints.CurrentCheckpointRed.transform.position;
+            StartCoroutine(waitForDeth(false));
+        }
+    }
+
+    IEnumerator waitForDeth(bool blue)
+    {
+        _controller.enabled = false;
+        if (blue)
+        {
+            transform.position = checkpoints.CurrentCheckpointBlue.transform.position;
+        }
+        else
+        {
+            transform.position = checkpoints.CurrentCheckpointRed.transform.position;
+        }
+        yield return new WaitForEndOfFrame();
+        _controller.enabled = true;
     }
 }
 
