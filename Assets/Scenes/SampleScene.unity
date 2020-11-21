@@ -275,8 +275,8 @@ GameObject:
   - component: {fileID: 610342602}
   - component: {fileID: 610342601}
   - component: {fileID: 610342598}
-  - component: {fileID: 610342604}
   - component: {fileID: 610342599}
+  - component: {fileID: 610342600}
   m_Layer: 0
   m_Name: Player1 (1)
   m_TagString: Untagged
@@ -317,6 +317,22 @@ MonoBehaviour:
   Player_1: 1
   speed: 6
   turnSmoothTime: 0.1
+  jumpSpeed: 10
+  gravity: 9.81
+--- !u!136 &610342600
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610342597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &610342601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -381,20 +397,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &610342604
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610342597}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,8 +501,8 @@ GameObject:
   - component: {fileID: 765306613}
   - component: {fileID: 765306612}
   - component: {fileID: 765306611}
-  - component: {fileID: 765306615}
   - component: {fileID: 765306609}
+  - component: {fileID: 765306610}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -523,6 +525,22 @@ MonoBehaviour:
   Player_1: 0
   speed: 6
   turnSmoothTime: 0.1
+  jumpSpeed: 10
+  gravity: 9.81
+--- !u!136 &765306610
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765306608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &765306611
 CharacterController:
   m_ObjectHideFlags: 0
@@ -605,20 +623,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &765306615
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765306608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &776733654
 GameObject:
   m_ObjectHideFlags: 0
