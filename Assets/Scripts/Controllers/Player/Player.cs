@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Utility;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
+    [HideInInspector] public bool isCloseToButton;
+    
     [SerializeField] private bool Player_1;
     [SerializeField] private float speed = 6f;
     [SerializeField] private float turnSmoothTime = .1f;
@@ -15,9 +18,14 @@ public class Player : MonoBehaviour
     private CharacterController _controller;
     private float _turnSmoothVelocity;
     private float _directionY;
-    private bool m_IsGrounded;
-    private float m_GroundCheckDistance;
-    private Vector3 moveDirection = Vector3.zero;
+    private bool _isParented;
+    private Vector3 _moveDirection = Vector3.zero;
+    private Transform _parentDiference;
+    private Vector3 _parentStaring;
+    private Vector3 lastPosition = Vector3.zero;
+    
+    public delegate void PressedAction();
+    public event PressedAction OnPressed;
 
     private void Start()
     {
@@ -28,16 +36,26 @@ public class Player : MonoBehaviour
     {
         float horizontal;
         float vertical;
+        
+        // Player1
         if (Player_1)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 CheckGroundStatus();
             }
+
+            if (Input.GetKeyDown(KeyCode.E) && isCloseToButton)
+            {
+                if (OnPressed != null)
+                    OnPressed();
+            }
         }
+        
+        // Player0
         else
         {
             horizontal = Input.GetAxisRaw("HorizontalArrow");
@@ -45,6 +63,7 @@ public class Player : MonoBehaviour
         }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         
+        // for all Players
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
@@ -53,23 +72,58 @@ public class Player : MonoBehaviour
             
             _controller.Move(direction * speed * Time.deltaTime);
         }
-        
-        moveDirection.y -= gravity * Time.deltaTime;
-        _controller.Move(moveDirection * Time.deltaTime);
+        CheckForPlatform();
+        if (_isParented)
+        {
+            //_moveDirection = (_parentDiference.position - lastPosition)/Time.deltaTime;
+            //lastPosition = _parentDiference.position;
+        }
+        _moveDirection.y -= gravity * Time.deltaTime;
+        _controller.Move(_moveDirection * Time.deltaTime);
     }
     void CheckGroundStatus()
     {
         Ray ray = new Ray(transform.position, -transform.up);
-        //decalre a RaycastHit. This is neccessary so it can get "filled" with information when casting the ray below.
+        
         RaycastHit hit;
-        //cast the ray. Note the "out hit" which makes the Raycast "fill" the hit variable with information. The maximum distance the ray will go is 1.5
+        
         if (Physics.Raycast(ray, out hit) == true)
         {
             if (transform.position.y - hit.point.y <= 1.5)
             {
-                moveDirection.y = jumpSpeed;
+                _moveDirection.y = jumpSpeed;
             }
             Debug.DrawLine(transform.position, hit.point, Color.green);
+        }
+    }
+    void CheckForPlatform()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+        
+        RaycastHit hit;
+        
+        if (Physics.Raycast(ray, out hit) == true)
+        {
+            if (transform.position.y - hit.point.y <= 1.5 && hit.collider.gameObject.tag == "Platform")
+            {
+                if (!_isParented)
+                {
+                    _parentStaring = new Vector3(
+                        hit.collider.gameObject.transform.position.x,
+                        hit.collider.gameObject.transform.position.y,
+                        hit.collider.gameObject.transform.position.z
+                        );
+                    _parentDiference = hit.collider.gameObject.transform;
+                    _isParented = true;
+                }
+            }
+            else
+            {
+                if (_isParented)
+                {
+                    _isParented = false;
+                }
+            }
         }
     }
 }
