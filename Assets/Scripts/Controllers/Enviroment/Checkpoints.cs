@@ -12,9 +12,11 @@ public class Checkpoints : MonoBehaviour
     [SerializeField] private Player redPlayer;
     private List<Checkpoint> checkpointListBlue;
     private List<Checkpoint> checkpointListRed;
+    private GameManager _gameManager;
 
     private void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         checkpointListBlue = new List<Checkpoint>();
         checkpointListRed = new List<Checkpoint>();
         
@@ -44,7 +46,14 @@ public class Checkpoints : MonoBehaviour
 
         if (isValidCheckpoint)
         {
-            CurrentCheckpointBlue = checkpoint;
+            if (checkpoint == checkpointListBlue[checkpointListBlue.Count])
+            {
+                _gameManager.BluePlayerHasFinished();
+            }
+            else
+            {
+                CurrentCheckpointBlue = checkpoint;
+            }
         }
     }
     public void EnterNewCheckpointRed(Checkpoint checkpoint)
@@ -60,7 +69,14 @@ public class Checkpoints : MonoBehaviour
 
         if (isValidCheckpoint)
         {
-            CurrentCheckpointRed = checkpoint;
+            if (checkpoint == checkpointListRed[checkpointListRed.Count])
+            {
+                _gameManager.RedPlayerHasFinished();
+            }
+            else
+            {
+                CurrentCheckpointRed = checkpoint;
+            }
         }
     }
 

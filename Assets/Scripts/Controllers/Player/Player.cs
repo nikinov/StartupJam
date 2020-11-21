@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _controller = gameObject.GetComponent<CharacterController>();
+        
         if (Player_1)
         {
             transform.position = checkpoints.CurrentCheckpointBlue.transform.position;

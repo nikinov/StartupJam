@@ -7,6 +7,7 @@ public class Distructable : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private float distanceFromDestruction = 5;
     [SerializeField] private float timeToDownScale = 1.5f;
+    [SerializeField] private GameObject indicatorTextUI;
 
     private bool called;
 
@@ -24,6 +25,7 @@ public class Distructable : MonoBehaviour
             {
                 player.OnDestroy += Destroy;
                 called = true;
+                indicatorTextUI.SetActive(true);
             }
         }
         else
@@ -32,6 +34,7 @@ public class Distructable : MonoBehaviour
             {
                 player.OnDestroy -= Destroy;
                 called = false;
+                indicatorTextUI.SetActive(false);
             }
         }
     }

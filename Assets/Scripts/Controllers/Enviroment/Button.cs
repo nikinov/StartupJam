@@ -8,6 +8,7 @@ public class Button : MonoBehaviour
     [SerializeField] private Platform platform;
     [SerializeField] private Player player;
     [SerializeField] private float distanceFromButton;
+    [SerializeField] private GameObject indicatorTextUI;
     
     private bool _isCloseToPLayer;
 
@@ -22,6 +23,7 @@ public class Button : MonoBehaviour
         {
             if (!_isCloseToPLayer)
             {
+                indicatorTextUI.SetActive(true);
                 _isCloseToPLayer = true;
                 player.isCloseToButton = true;
                 player.OnPressed += ButtonPressed;
@@ -31,6 +33,7 @@ public class Button : MonoBehaviour
         {
             if (_isCloseToPLayer)
             {
+                indicatorTextUI.SetActive(false);
                 _isCloseToPLayer = false;
                 player.isCloseToButton = false;
                 player.OnPressed -= ButtonPressed;

@@ -158,6 +158,7 @@ MonoBehaviour:
   player: {fileID: 3997946518956631319}
   distanceFromDestruction: 5
   timeToDownScale: 1.5
+  indicatorTextUI: {fileID: 700161959}
 --- !u!65 &10613235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -301,6 +302,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &232272807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629323637967140018, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+  m_PrefabInstance: {fileID: 629323637543702061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &262191676
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84e922c74b650ff4799129a67c6b9e22, type: 3}
+--- !u!1 &700161959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629323637984488656, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+  m_PrefabInstance: {fileID: 629323637543702061}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1625,7 @@ MonoBehaviour:
   platform: {fileID: 1039502055}
   player: {fileID: 3924787411270659089}
   distanceFromButton: 3
+  indicatorTextUI: {fileID: 232272807}
 --- !u!65 &1694954684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2002,6 +2014,7 @@ GameObject:
   - component: {fileID: 7905686889146237462}
   - component: {fileID: 4304907109555550224}
   - component: {fileID: 8317950563424318053}
+  - component: {fileID: 595806485407018722}
   m_Layer: 0
   m_Name: "Ku\u017Eel_2"
   m_TagString: Untagged
@@ -2009,6 +2022,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &595806485407018722
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595806485407018721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5550368310062692653, guid: 0f10f77b65a5144a8ad0ca2723a7ca60, type: 3}
 --- !u!1001 &629323637543702061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2016,6 +2043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 629323637372476960, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_Name
+      value: BlueUI
+      objectReference: {fileID: 0}
     - target: {fileID: 629323637767898051, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2104,6 +2135,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 629323637967139982, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_text
+      value: E
+      objectReference: {fileID: 0}
+    - target: {fileID: 629323637967139982, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
+      objectReference: {fileID: 0}
     - target: {fileID: 629323637967139983, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
       propertyPath: cam
       value: 
@@ -2112,6 +2151,22 @@ PrefabInstance:
       propertyPath: follow
       value: 
       objectReference: {fileID: 10613238}
+    - target: {fileID: 629323637984488658, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_text
+      value: SHIFT
+      objectReference: {fileID: 0}
+    - target: {fileID: 629323637984488658, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_fontSize
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 629323637984488658, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 629323637984488658, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
     - target: {fileID: 629323637984488748, guid: 6e2d4d916ef3845789dc4cead1fb64dc, type: 3}
       propertyPath: cam
       value: 
