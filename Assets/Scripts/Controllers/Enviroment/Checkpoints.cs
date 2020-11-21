@@ -46,7 +46,7 @@ public class Checkpoints : MonoBehaviour
 
         if (isValidCheckpoint)
         {
-            if (checkpoint == checkpointListBlue[checkpointListBlue.Count])
+            if (checkpoint == checkpointListBlue[checkpointListBlue.Count - 1])
             {
                 _gameManager.BluePlayerHasFinished();
             }
@@ -69,7 +69,7 @@ public class Checkpoints : MonoBehaviour
 
         if (isValidCheckpoint)
         {
-            if (checkpoint == checkpointListRed[checkpointListRed.Count])
+            if (checkpoint == checkpointListRed[checkpointListRed.Count - 1])
             {
                 _gameManager.RedPlayerHasFinished();
             }

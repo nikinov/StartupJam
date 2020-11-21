@@ -13,6 +13,7 @@ public class Distructable : MonoBehaviour
 
     private void Start()
     {
+        indicatorTextUI.SetActive(false);
         DOTween.Init();
         transform.GetChild(0).gameObject.SetActive(false);
     }
@@ -46,10 +47,12 @@ public class Distructable : MonoBehaviour
 
     IEnumerator waitForDestroy(float timing)
     {
+        indicatorTextUI.SetActive(false);
         transform.DOScale(new Vector3(0, 0, 0), timing);
         yield return new  WaitForSeconds(timing);
         transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
+        Destroy(indicatorTextUI);
         Destroy(gameObject);
     }
     
