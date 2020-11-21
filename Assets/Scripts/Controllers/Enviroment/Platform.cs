@@ -22,7 +22,7 @@ public class Platform : MonoBehaviour
     {
         if (isMoving)
         {
-            if (Vector3.Distance(transform.position, target.position) >= .5f)
+            if (Vector3.Distance(transform.position, target.position) >= .3f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * moveSpeed);
             }

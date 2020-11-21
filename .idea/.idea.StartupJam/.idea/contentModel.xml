@@ -25,10 +25,12 @@
           <e p="Controllers" t="Include">
             <e p="Enviroment" t="Include">
               <e p="Button.cs" t="Include" />
+              <e p="Distructable.cs" t="Include" />
               <e p="Platform.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
               <e p="Player.cs" t="Include" />
+              <e p="RobotRot.cs" t="Include" />
             </e>
           </e>
         </e>
