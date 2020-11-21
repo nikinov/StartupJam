@@ -22,20 +22,8 @@
     <list default="true" id="b9e72c0b-cf63-4444-88c3-1d2fd9bff49a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBX/FracturedDoor.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBX/FracturedDoor.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBX/FracturedDoorNotFractured.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBX/FracturedDoorNotFractured.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/FracturedDoor.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/FracturedDoor.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/FracturedDoorNotFractured.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/FracturedDoorNotFractured.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/robot_carrier_anteny_AlbedoTransparency.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Materials/robot_carrier_anteny_AlbedoTransparency.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene_Profiles/Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene_Profiles/Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +37,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/ExplosionFireAndDebris.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Platform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Player/RobotRot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -62,8 +52,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/DethFloor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605884567699</updated>
-      <workItem from="1605884575715" duration="25628000" />
+      <workItem from="1605884575715" duration="27334000" />
     </task>
     <servers />
   </component>
