@@ -14,7 +14,7 @@ public class Button : MonoBehaviour
 
     private void Start()
     {
-        
+        indicatorTextUI.SetActive(false);
     }
 
     private void Update()
