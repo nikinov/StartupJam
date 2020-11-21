@@ -5,6 +5,20 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="ParticalSystemStuff" t="Include">
+          <e p="_articleSystems" t="Include">
+            <e p="ParticleSystemsGuidelines.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="PriorityParticleAdd.shader" t="Include" />
+              <e p="PriorityParticleAddSoft.shader" t="Include" />
+              <e p="PriorityParticleAlpha.shader" t="Include" />
+            </e>
+          </e>
+          <e p="ParticleSystemsGuidelines.txt" t="Include" />
+          <e p="PriorityParticleAdd.shader" t="Include" />
+          <e p="PriorityParticleAddSoft.shader" t="Include" />
+          <e p="PriorityParticleAlpha.shader" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="Demigiant" t="Include">
             <e p="DOTween" t="Include">
@@ -25,7 +39,12 @@
           <e p="Controllers" t="Include">
             <e p="Enviroment" t="Include">
               <e p="Button.cs" t="Include" />
+              <e p="Checkpoint.cs" t="Include" />
+              <e p="Checkpoints.cs" t="Include" />
               <e p="Distructable.cs" t="Include" />
+              <e p="ExplosionFireAndDebris.cs" t="Include" />
+              <e p="ExplosionPhysicsForce.cs" t="Include" />
+              <e p="ParticleSystemMultiplier.cs" t="Include" />
               <e p="Platform.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
