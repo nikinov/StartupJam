@@ -41,7 +41,6 @@ public class Button : MonoBehaviour
 
     void ButtonPressed()
     {
-        print("button pressed");
         platform.MakeAction();
     }
 }

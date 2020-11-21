@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     private bool _isParented;
     private Vector3 _moveDirection = Vector3.zero;
     private Transform _parentDiference;
-    private Vector3 _parentStaring;
     private Vector3 lastPosition = Vector3.zero;
     
     public delegate void PressedAction();
@@ -73,13 +72,15 @@ public class Player : MonoBehaviour
             _controller.Move(direction * speed * Time.deltaTime);
         }
         CheckForPlatform();
+        Vector3 parentD = Vector3.zero;
         if (_isParented)
         {
-            //_moveDirection = (_parentDiference.position - lastPosition)/Time.deltaTime;
-            //lastPosition = _parentDiference.position;
+            if(lastPosition != Vector3.zero)
+                parentD = (_parentDiference.position - lastPosition)/Time.deltaTime;
+            lastPosition = _parentDiference.position;
         }
         _moveDirection.y -= gravity * Time.deltaTime;
-        _controller.Move(_moveDirection * Time.deltaTime);
+        _controller.Move((_moveDirection + parentD) * Time.deltaTime);
     }
     void CheckGroundStatus()
     {
@@ -108,11 +109,6 @@ public class Player : MonoBehaviour
             {
                 if (!_isParented)
                 {
-                    _parentStaring = new Vector3(
-                        hit.collider.gameObject.transform.position.x,
-                        hit.collider.gameObject.transform.position.y,
-                        hit.collider.gameObject.transform.position.z
-                        );
                     _parentDiference = hit.collider.gameObject.transform;
                     _isParented = true;
                 }
