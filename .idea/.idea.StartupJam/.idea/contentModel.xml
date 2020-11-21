@@ -51,6 +51,12 @@
               <e p="Player.cs" t="Include" />
               <e p="RobotRot.cs" t="Include" />
             </e>
+            <e p="UI" t="Include">
+              <e p="ClipText.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Managers" t="Include">
+            <e p="UIManager.cs" t="Include" />
           </e>
         </e>
       </e>

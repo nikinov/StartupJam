@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
             if (OnDestroy != null)
                 OnDestroy();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.LeftCommand))
+        {
+            
+        }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         
         // for all Players
