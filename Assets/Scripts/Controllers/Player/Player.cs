@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     
     public delegate void PressedAction();
     public event PressedAction OnPressed;
+    public delegate void DestroyAction();
+    public event DestroyAction OnDestroy;
 
     private void Start()
     {
@@ -44,7 +46,7 @@ public class Player : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                CheckGroundStatus();
+                CheckGroundStatus(true);
             }
 
             if (Input.GetKeyDown(KeyCode.E) && isCloseToButton)
@@ -59,6 +61,12 @@ public class Player : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("HorizontalArrow");
             vertical = Input.GetAxisRaw("VerticalArrow");
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            if (OnDestroy != null)
+                OnDestroy();
         }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         
@@ -79,10 +87,9 @@ public class Player : MonoBehaviour
                 parentD = (_parentDiference.position - lastPosition)/Time.deltaTime;
             lastPosition = _parentDiference.position;
         }
-        _moveDirection.y -= gravity * Time.deltaTime;
         _controller.Move((_moveDirection + parentD) * Time.deltaTime);
     }
-    void CheckGroundStatus()
+    void CheckGroundStatus(bool jump=false)
     {
         Ray ray = new Ray(transform.position, -transform.up);
         
@@ -92,7 +99,8 @@ public class Player : MonoBehaviour
         {
             if (transform.position.y - hit.point.y <= 1.5)
             {
-                _moveDirection.y = jumpSpeed;
+                if(jump)
+                    _moveDirection.y = jumpSpeed;
             }
             Debug.DrawLine(transform.position, hit.point, Color.green);
         }
@@ -120,6 +128,8 @@ public class Player : MonoBehaviour
                     _isParented = false;
                 }
             }
+            if(!_controller.isGrounded)
+                _moveDirection.y -= gravity * Time.deltaTime;
         }
     }
 }
