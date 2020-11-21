@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private float _directionY;
     private bool m_IsGrounded;
     private float m_GroundCheckDistance;
+    private Vector3 moveDirection = Vector3.zero;
 
     private void Start()
     {
@@ -31,14 +32,10 @@ public class Player : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             vertical = Input.GetAxisRaw("Vertical");
-            if(Input.GetButtonDown("Jump") && _controller.isGrounded)
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                print("aa");
-                transform.Translate(0, jumpSpeed * Time.deltaTime, 0);
-            }
-            else if (m_IsGrounded)
-            {
-                transform.Translate(0, - gravity * Time.deltaTime, 0);
+                CheckGroundStatus();
             }
         }
         else
@@ -56,23 +53,23 @@ public class Player : MonoBehaviour
             
             _controller.Move(direction * speed * Time.deltaTime);
         }
-        void CheckGroundStatus()
+        
+        moveDirection.y -= gravity * Time.deltaTime;
+        _controller.Move(moveDirection * Time.deltaTime);
+    }
+    void CheckGroundStatus()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+        //decalre a RaycastHit. This is neccessary so it can get "filled" with information when casting the ray below.
+        RaycastHit hit;
+        //cast the ray. Note the "out hit" which makes the Raycast "fill" the hit variable with information. The maximum distance the ray will go is 1.5
+        if (Physics.Raycast(ray, out hit) == true)
         {
-            RaycastHit hitInfo;
-#if UNITY_EDITOR
-            // helper to visualise the ground check ray in the scene view
-            Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
-#endif
-            // 0.1f is a small offset to start the ray from inside the character
-            // it is also good to note that the transform position in the sample assets is at the base of the character
-            if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+            if (transform.position.y - hit.point.y <= 1.5)
             {
-                m_IsGrounded = true;
+                moveDirection.y = jumpSpeed;
             }
-            else
-            {
-                m_IsGrounded = false;
-            }
+            Debug.DrawLine(transform.position, hit.point, Color.green);
         }
     }
 }
