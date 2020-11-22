@@ -1,40 +1,58 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Security.Cryptography;
+﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class Distructable : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private GameObject BreakVersion;
-    [SerializeField] private float bForce;
     [SerializeField] private float distanceFromDestruction = 5;
-    private int active;
+    [SerializeField] private float timeToDownScale = 1.5f;
+    [SerializeField] private GameObject indicatorTextUI;
+
+    private bool called;
 
     private void Start()
     {
-        
+        indicatorTextUI.SetActive(false);
+        DOTween.Init();
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     private void Update()
     {
         if (Vector3.Distance(transform.position, player.transform.position) < distanceFromDestruction)
         {
-            player.OnDestroy += Destroy;
+            if (!called)
+            {
+                player.OnDestroy += Destroy;
+                called = true;
+                indicatorTextUI.SetActive(true);
+            }
         }
         else
         {
-            player.OnDestroy -= Destroy;
+            if (called)
+            {
+                player.OnDestroy -= Destroy;
+                called = false;
+                indicatorTextUI.SetActive(false);
+            }
         }
     }
 
     private void Destroy()
     {
-        active+=1;
-        GameObject go = Instantiate(BreakVersion, transform.position, transform.rotation, gameObject.transform.parent);
-        //go.GetComponent<Rigidbody>().AddExplosionForce(10f, Vector3.zero, 0f);
+        StartCoroutine(waitForDestroy(timeToDownScale));
+    }
+
+    IEnumerator waitForDestroy(float timing)
+    {
+        indicatorTextUI.SetActive(false);
+        transform.DOScale(new Vector3(0, 0, 0), timing);
+        yield return new  WaitForSeconds(timing);
+        transform.GetChild(0).gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        Destroy(indicatorTextUI);
         Destroy(gameObject);
     }
     
