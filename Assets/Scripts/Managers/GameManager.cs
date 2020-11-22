@@ -28,13 +28,17 @@ public class GameManager : MonoBehaviour
 
     IEnumerator showTarget()
     {
+        cinemachineVirtualCameraBlue.GetCinemachineComponent<CinemachineHardLockToTarget>().m_Damping = 1;
+        cinemachineVirtualCameraRed.GetCinemachineComponent<CinemachineHardLockToTarget>().m_Damping = 1;
         _originalTransformBlue = cinemachineVirtualCameraBlue.Follow;
         _originalTransformRed = cinemachineVirtualCameraRed.Follow;
         yield return new WaitForSeconds(.5f);
         cinemachineVirtualCameraBlue.Follow = checkpoints.FinishCheckpointBlue.transform;
         cinemachineVirtualCameraRed.Follow = checkpoints.FinishCheckpointRed.transform;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         cinemachineVirtualCameraBlue.Follow = _originalTransformBlue;
         cinemachineVirtualCameraRed.Follow = _originalTransformRed;
+        cinemachineVirtualCameraBlue.GetCinemachineComponent<CinemachineHardLockToTarget>().m_Damping = 3;
+        cinemachineVirtualCameraRed.GetCinemachineComponent<CinemachineHardLockToTarget>().m_Damping = 3;
     }
 }

@@ -20,23 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9e72c0b-cf63-4444-88c3-1d2fd9bff49a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FBX/Materials/Cricket_telo_AlbedoTransparency.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FBX/Materials/Cricket_telo_AlbedoTransparency.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateBlue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateBlue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateRed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateRed.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Materials/robot_carrier_koule_AlbedoTransparency.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Materials/robot_carrier_koule_AlbedoTransparency.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabsForLevelDesign/Enviroment/Checkpoints/checkpointBLue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabsForLevelDesign/Enviroment/Checkpoints/checkpointBLue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabsForLevelDesign/Enviroment/Checkpoints/checkpointRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabsForLevelDesign/Enviroment/Checkpoints/checkpointRed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleSceneSettings.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +54,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/DeathFloor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -114,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605884567699</updated>
-      <workItem from="1605884575715" duration="32900000" />
+      <workItem from="1605884575715" duration="33295000" />
     </task>
     <servers />
   </component>
