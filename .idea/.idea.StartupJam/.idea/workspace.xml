@@ -21,10 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b9e72c0b-cf63-4444-88c3-1d2fd9bff49a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateBlue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateBlue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateRed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Checkpoints/CheckpointPlateRed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Explosion.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Explosion.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/ExplosionFireAndDebris.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/DeathFloor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Platform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Player/RobotRot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,11 +58,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/DeathFloor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -100,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605884567699</updated>
-      <workItem from="1605884575715" duration="29521000" />
+      <workItem from="1605884575715" duration="33837000" />
     </task>
     <servers />
   </component>

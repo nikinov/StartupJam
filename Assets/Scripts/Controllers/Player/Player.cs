@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
             vertical = Input.GetAxisRaw("VerticalArrow");
         }
 
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (OnDestroy != null)
                 OnDestroy();
@@ -110,6 +110,11 @@ public class Player : MonoBehaviour
                 _parentDiference = null;
                 _lastPosition = Vector3.zero;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Deth();
         }
         _controller.Move((_moveDirection + parentD) * Time.deltaTime);
     }
