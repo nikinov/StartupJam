@@ -25,15 +25,19 @@ public class Player : MonoBehaviour
     private Transform _parentDiference;
     private Vector3 _lastPosition = Vector3.zero;
     
+    
     public delegate void PressedAction();
     public event PressedAction OnPressed;
     public delegate void DestroyAction();
     public event DestroyAction OnDestroy;
+    
+
 
     private void Start()
     {
         _controller = gameObject.GetComponent<CharacterController>();
         
+
         if (Player_1)
         {
             transform.position = checkpoints.CurrentCheckpointBlue.transform.position;
