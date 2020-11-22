@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - DeathFloor
   - Fire
+  - Tree
   layers:
   - Default
   - TransparentFX
