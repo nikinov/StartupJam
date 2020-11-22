@@ -58,6 +58,7 @@ public class Checkpoints : MonoBehaviour
             else
             {
                 CurrentCheckpointBlue = checkpoint;
+                checkpoint.CheckpointEntered();
             }
         }
     }
@@ -84,6 +85,7 @@ public class Checkpoints : MonoBehaviour
             else
             {
                 CurrentCheckpointRed = checkpoint;
+                checkpoint.CheckpointEntered();
             }
         }
     }
