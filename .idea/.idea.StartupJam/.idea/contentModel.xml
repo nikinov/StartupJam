@@ -5,6 +5,11 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Materials" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="OutlineShader.shader" t="Include" />
+          </e>
+        </e>
         <e p="ParticalSystemStuff" t="Include">
           <e p="_articleSystems" t="Include">
             <e p="ParticleSystemsGuidelines.txt" t="Include" />
@@ -41,6 +46,7 @@
               <e p="Button.cs" t="Include" />
               <e p="Checkpoint.cs" t="Include" />
               <e p="Checkpoints.cs" t="Include" />
+              <e p="DeathFloor.cs" t="Include" />
               <e p="Distructable.cs" t="Include" />
               <e p="ExplosionFireAndDebris.cs" t="Include" />
               <e p="ExplosionPhysicsForce.cs" t="Include" />
@@ -48,6 +54,8 @@
               <e p="Platform.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="ButtonThreshhold.cs" t="Include" />
+              <e p="MainMenuController.cs" t="Include" />
               <e p="Player.cs" t="Include" />
               <e p="RobotRot.cs" t="Include" />
             </e>

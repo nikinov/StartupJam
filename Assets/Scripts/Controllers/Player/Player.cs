@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
             vertical = Input.GetAxisRaw("VerticalArrow");
         }
 
-        if (Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (OnDestroy != null)
                 OnDestroy();

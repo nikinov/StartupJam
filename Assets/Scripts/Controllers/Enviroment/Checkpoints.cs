@@ -7,6 +7,8 @@ public class Checkpoints : MonoBehaviour
 {
     [HideInInspector] public Checkpoint CurrentCheckpointBlue;
     [HideInInspector] public Checkpoint CurrentCheckpointRed;
+    [HideInInspector] public Checkpoint FinishCheckpointBlue;
+    [HideInInspector] public Checkpoint FinishCheckpointRed;
     
     [SerializeField] private Player bluePlayer;
     [SerializeField] private Player redPlayer;
@@ -31,6 +33,9 @@ public class Checkpoints : MonoBehaviour
 
         CurrentCheckpointBlue = checkpointListBlue[0];
         CurrentCheckpointRed = checkpointListRed[0];
+
+        FinishCheckpointBlue = checkpointListBlue[checkpointListBlue.Count - 1];
+        FinishCheckpointRed = checkpointListRed[checkpointListRed.Count - 1];
     }
 
     public void EnterNewCheckpointBlue(Checkpoint checkpoint)
@@ -58,11 +63,14 @@ public class Checkpoints : MonoBehaviour
     }
     public void EnterNewCheckpointRed(Checkpoint checkpoint)
     {
+        print("checkpointAAs");
         bool isValidCheckpoint = false;
         foreach (Checkpoint checkpointt in checkpointListRed)
         {
+            print("checkpoints");
             if (checkpoint == checkpointt)
             {
+                print("checkpoint found");
                 isValidCheckpoint = true;
             }
         }
