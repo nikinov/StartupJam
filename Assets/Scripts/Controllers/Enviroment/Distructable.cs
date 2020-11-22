@@ -8,6 +8,7 @@ public class Distructable : MonoBehaviour
     [SerializeField] private float distanceFromDestruction = 5;
     [SerializeField] private float timeToDownScale = 1.5f;
     [SerializeField] private GameObject indicatorTextUI;
+    [SerializeField] private bool fallApart;
 
     private bool called;
 
@@ -20,29 +21,39 @@ public class Distructable : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < distanceFromDestruction)
+        if (indicatorTextUI != null)
         {
-            if (!called)
+            if (Vector3.Distance(transform.position, player.transform.position) < distanceFromDestruction)
             {
-                player.OnDestroy += Destroy;
-                called = true;
-                indicatorTextUI.SetActive(true);
+                if (!called)
+                {
+                    player.OnDestroy += Destroy;
+                    called = true;
+                    indicatorTextUI.SetActive(true);
+                }
             }
-        }
-        else
-        {
-            if (called)
+            else
             {
-                player.OnDestroy -= Destroy;
-                called = false;
-                indicatorTextUI.SetActive(false);
+                if (called)
+                {
+                    player.OnDestroy -= Destroy;
+                    called = false;
+                    indicatorTextUI.SetActive(false);
+                }
             }
         }
     }
 
     private void Destroy()
     {
-        StartCoroutine(waitForDestroy(timeToDownScale));
+        if (fallApart)
+        {
+            StartCoroutine(waitForDestroyFallApart(timeToDownScale));
+        }
+        else
+        {
+            StartCoroutine(waitForDestroy(timeToDownScale));
+        }
     }
 
     IEnumerator waitForDestroy(float timing)
@@ -54,6 +65,22 @@ public class Distructable : MonoBehaviour
         yield return new WaitForSeconds(3);
         Destroy(indicatorTextUI);
         Destroy(gameObject);
+    }
+    IEnumerator waitForDestroyFallApart(float timing)
+    {
+        Destroy(indicatorTextUI);
+        foreach (Transform t in transform)
+        {
+            if (t.gameObject.name != "Explosion")
+            {
+                Rigidbody rb = t.gameObject.AddComponent<Rigidbody>();
+                rb.AddExplosionForce(1, Vector3.up, 2);
+            }
+        }
+        transform.GetChild(0).gameObject.SetActive(true);
+        yield return new  WaitForSeconds(timing);
+        yield return new WaitForSeconds(2);
+        Destroy(this);
     }
     
 }
