@@ -111,6 +111,11 @@ public class Player : MonoBehaviour
                 _lastPosition = Vector3.zero;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Deth();
+        }
         _controller.Move((_moveDirection + parentD) * Time.deltaTime);
     }
 

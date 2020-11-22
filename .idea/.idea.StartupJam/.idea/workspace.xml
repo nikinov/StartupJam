@@ -21,10 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b9e72c0b-cf63-4444-88c3-1d2fd9bff49a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StartupJam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBX/ostrov2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBX/ostrov2_Barva_1.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBX/ostrov3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FBX/ostrov3_Barva_1.tif.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +58,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/UI/ClipText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Checkpoints.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Button.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Enviroment/Distructable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Player/Player.cs" />
       </list>
     </option>
   </component>
@@ -100,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605884567699</updated>
-      <workItem from="1605884575715" duration="29521000" />
+      <workItem from="1605884575715" duration="31455000" />
     </task>
     <servers />
   </component>
